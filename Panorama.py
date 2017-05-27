@@ -53,8 +53,6 @@ def findMatchesBetweenImages(image_1, image_2, num_matches):
     # make sure the tests pass.
     return image_1_kp, image_2_kp, matches[:num_matches]
 
-  # END OF FUNCTION.
-
 def findHomography(image_1_kp, image_2_kp, matches):
     # Create two sequences of corresponding (matched) points
     image_1_points = []
@@ -69,7 +67,6 @@ def findHomography(image_1_kp, image_2_kp, matches):
     # Compute homography (since our objects are planar) using RANSAC to reject outliers
     M_hom, inliers = cv2.findHomography(image_1_points, image_2_points, cv2.RANSAC) # transform img2 to img1's space
 
-    # Replace this return statement with the homography.
     return M_hom
 
 def blendImagePair(warped_image, image_2, point):
